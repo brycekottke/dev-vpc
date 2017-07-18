@@ -16,7 +16,7 @@ Steps terraform will take:
   - Create AWS NAT Gateway
   - Create 2 EIP's and Associate with NAT Gateway
 
-### Deploy ###
+### Deploy Terraform Stack ###
   - Create S3 Bucket to store terraform .tfstate file
 
 ```
@@ -75,5 +75,15 @@ Run terraform commands to stand up the VPC infrastructure
 ```
 $ terraform init
 $ terraform plan -out=create.tfplan
+$ terraform show create.tfplan
 $ terraform apply create.tfplan
+```
+
+### Destroy Terraform Stack ###
+Run terraform commands to stand up the VPC infrastructure
+```
+$ terraform init
+$ terraform plan -destroy -out=destroy.tfplan
+$ terraform show destroy.tfplan
+$ terraform apply destroy.tfplan
 ```
